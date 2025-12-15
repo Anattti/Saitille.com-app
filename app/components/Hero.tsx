@@ -111,14 +111,20 @@ export default function Hero() {
                             className="block"
                             // Variants määrittelevät animaation tilat
                             variants={{
-                                hidden: { y: "100%", opacity: 0 },  // Hover: liukuu alas piiloon
-                                visible: { y: 0, opacity: 1 }        // Normaali: näkyvillä
+                                hidden: {
+                                    y: "100%",
+                                    opacity: 0,
+                                    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }
+                                },  // Hover: liukuu alas piiloon
+                                visible: {
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }
+                                }        // Normaali: näkyvillä
                             }}
                             // Alkuanimaatio sivun latautuessa
                             initial={{ y: "100%", opacity: 0 }}  // Alkaa alhaalta piilossa
                             animate={{ y: 0, opacity: 1 }}       // Nousee näkyviin
-                            // SÄÄDÄ TÄSTÄ: duration = animaation kesto, delay = viive
-                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
                         >
                             SAITILLE.
                         </motion.span>
@@ -129,13 +135,19 @@ export default function Hero() {
                         <motion.span
                             className="block"
                             variants={{
-                                hidden: { y: "100%", opacity: 0 },
-                                visible: { y: 0, opacity: 1 }
+                                hidden: {
+                                    y: "100%",
+                                    opacity: 0,
+                                    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.3 }
+                                },
+                                visible: {
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.6 }
+                                }
                             }}
                             initial={{ y: "100%", opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            // SÄÄDÄ TÄSTÄ: delay 0.4s tekee porrastetun efektin
-                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
                         >
                             COM
                         </motion.span>
@@ -148,22 +160,34 @@ export default function Hero() {
                         className="absolute inset-0 flex items-center justify-center text-[4vw] tracking-widest uppercase"
                         // Ulompi div: fade-efekti
                         variants={{
-                            hidden: { y: 0, opacity: 1 },   // Hover: näkyvillä
-                            visible: { y: 0, opacity: 0 }   // Normaali: piilotettu
+                            hidden: {
+                                y: 0,
+                                opacity: 1,
+                                transition: { delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+                            },   // Hover: näkyvillä
+                            visible: {
+                                y: 0,
+                                opacity: 0,
+                                transition: { delay: 0, duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+                            }   // Normaali: piilotettu
                         }}
-                        // SÄÄDÄ TÄSTÄ: delay 0.6s odottaa että pääteksti ehtii liukua pois
-                        transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     >
                         {/* Sisempi span: slide-up efekti */}
                         <span className="block overflow-hidden">
                             <motion.span
                                 className="block"
                                 variants={{
-                                    hidden: { y: 0, opacity: 1 },      // Hover: näkyvillä
-                                    visible: { y: "-100%", opacity: 0 } // Normaali: ylhäällä piilossa
+                                    hidden: {
+                                        y: 0,
+                                        opacity: 1,
+                                        transition: { delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+                                    },      // Hover: näkyvillä
+                                    visible: {
+                                        y: "-100%",
+                                        opacity: 0,
+                                        transition: { delay: 0, duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+                                    } // Normaali: ylhäällä piilossa
                                 }}
-                                // SÄÄDÄ TÄSTÄ: saman delay kuin ulommassa divissä
-                                transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                             >
                                 Made to Stand Out
                             </motion.span>
