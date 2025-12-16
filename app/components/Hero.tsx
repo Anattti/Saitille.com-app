@@ -54,19 +54,19 @@ export default function Hero() {
             {/* Kaikki häipyvät scrollatessa (opacity-efekti) */}
 
             {/* Vasen ylä: Logo */}
-            <motion.div style={{ opacity }} className="absolute top-8 left-8 z-20 text-xs font-bold tracking-widest uppercase opacity-80">
+            <motion.div style={{ opacity }} className="hidden sm:block absolute top-8 left-8 z-20 text-xs font-bold tracking-widest uppercase opacity-80">
                 Saitille.com
             </motion.div>
 
             {/* Oikea ylä: Navigaatio */}
-            <motion.div style={{ opacity }} className="absolute top-8 right-8 z-20 flex gap-8 text-xs font-bold tracking-widest uppercase">
-                <a href="#projects" className="hover:opacity-100 opacity-60 transition-opacity">Projects</a>
+            <motion.div style={{ opacity }} className="absolute top-8 left-0 z-20 flex w-full justify-between px-8 text-xs font-bold tracking-widest uppercase sm:left-auto sm:right-8 sm:w-auto sm:justify-start sm:gap-8 sm:px-0">
+                <a href="#projects" className="opacity-100 md:opacity-60 transition-opacity">Projects</a>
                 <a href="#about" className="hover:opacity-100 opacity-60 transition-opacity">About</a>
                 <a href="#contact" className="hover:opacity-100 opacity-60 transition-opacity">Let&apos;s Talk</a>
             </motion.div>
 
             {/* Vasen ala: Tagline */}
-            <motion.div style={{ opacity }} className="absolute bottom-8 left-8 z-20 text-xs font-bold tracking-widest uppercase opacity-60">
+            <motion.div style={{ opacity }} className="hidden sm:block absolute bottom-8 left-8 z-20 text-xs font-bold tracking-widest uppercase opacity-60">
                 Creative Production Studio
             </motion.div>
 
@@ -108,7 +108,7 @@ export default function Hero() {
                     {/* Ensimmäinen rivi: "SAITILLE." */}
                     <span className="block overflow-hidden">
                         <motion.span
-                            className="block"
+                            className="block will-change-transform"
                             // Variants määrittelevät animaation tilat
                             variants={{
                                 hidden: {
@@ -134,7 +134,7 @@ export default function Hero() {
                     {/* Toinen rivi: "COM" */}
                     <span className="block overflow-hidden">
                         <motion.span
-                            className="block"
+                            className="block will-change-transform"
                             variants={{
                                 hidden: {
                                     y: "100%",
