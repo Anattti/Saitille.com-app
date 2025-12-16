@@ -121,7 +121,7 @@ export default function Hero() {
                         {/* ============================================ */}
 
                         {/* Ensimmäinen rivi: "SAITILLE." */}
-                        <span className="block overflow-hidden">
+                        <span className="flex block overflow-hidden">
                             <motion.span
                                 className="block will-change-transform"
                                 variants={{
@@ -141,7 +141,28 @@ export default function Hero() {
                                     }
                                 }}
                             >
-                                SAITILLE.
+                                SAITILLE
+                            </motion.span>
+                            <motion.span
+                                className="block will-change-transform"
+                                variants={{
+                                    enter: {
+                                        y: "100%",
+                                        opacity: 0
+                                    },
+                                    hidden: {
+                                        y: "100%",
+                                        opacity: 0,
+                                        transition: { duration: 0.6, ease: [0.6, 1, 0.2, 1], delay: 0.1 }
+                                    },
+                                    visible: {
+                                        y: 0,
+                                        opacity: 1,
+                                        transition: { duration: 0.6, ease: [0.6, 1, 0.2, 1], delay: 0.4 }
+                                    }
+                                }}
+                            >
+                                .
                             </motion.span>
                         </span>
 
@@ -212,7 +233,8 @@ export default function Hero() {
                                         }
                                     }}
                                 >
-                                    Made to Stand Out
+                                    Tehty Erottumaan
+                                    {/* Made to Stand Out */}
                                 </motion.span>
                             </span>
                         </motion.div>
