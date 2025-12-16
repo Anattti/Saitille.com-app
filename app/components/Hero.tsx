@@ -35,7 +35,7 @@ export default function Hero() {
     return (
         <section
             ref={containerRef}
-            className="sticky top-0 h-screen w-full overflow-hidden bg-accent text-white selection:bg-white selection:text-accent z-0"
+            className="sticky top-0 h-[100dvh] w-full overflow-hidden bg-accent text-white selection:bg-white selection:text-accent z-0"
         >
             {/* ============================================ */}
             {/* TAUSTA - Radial gradient sinisellä */}
