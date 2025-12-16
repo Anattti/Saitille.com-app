@@ -125,6 +125,7 @@ export default function Hero() {
                             // Alkuanimaatio sivun latautuessa
                             initial={{ y: "100%", opacity: 0 }}  // Alkaa alhaalta piilossa
                             animate={{ y: 0, opacity: 1 }}       // Nousee näkyviin
+                            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
                         >
                             SAITILLE.
                         </motion.span>
@@ -148,6 +149,7 @@ export default function Hero() {
                             }}
                             initial={{ y: "100%", opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
                         >
                             COM
                         </motion.span>
