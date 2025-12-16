@@ -108,7 +108,7 @@ export default function Hero() {
                     */}
                     <motion.h1
                         className="text-[18vw] leading-[0.8] font-bold tracking-tighter text-center mix-blend-overlay opacity-90 select-none cursor-pointer relative"
-                        initial="visible"
+                        initial="enter"
                         animate={showSlogan ? "hidden" : "visible"}
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
@@ -125,6 +125,10 @@ export default function Hero() {
                             <motion.span
                                 className="block will-change-transform"
                                 variants={{
+                                    enter: {
+                                        y: "100%",
+                                        opacity: 0
+                                    },
                                     hidden: {
                                         y: "100%",
                                         opacity: 0,
@@ -136,7 +140,6 @@ export default function Hero() {
                                         transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }
                                     }
                                 }}
-                                initial={{ y: "100%", opacity: 0 }}
                             >
                                 SAITILLE.
                             </motion.span>
@@ -147,6 +150,10 @@ export default function Hero() {
                             <motion.span
                                 className="block will-change-transform"
                                 variants={{
+                                    enter: {
+                                        y: "100%",
+                                        opacity: 0
+                                    },
                                     hidden: {
                                         y: "100%",
                                         opacity: 0,
@@ -158,7 +165,6 @@ export default function Hero() {
                                         transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.6 }
                                     }
                                 }}
-                                initial={{ y: "100%", opacity: 0 }}
                             >
                                 COM
                             </motion.span>
@@ -166,9 +172,14 @@ export default function Hero() {
 
                         {/* ============================================ */}
                         {/* SLOGAN - Näkyy kun showSlogan on tosi */}
+                        {/* ============================================ */}
                         <motion.div
                             className="absolute inset-0 flex items-center justify-center text-[4vw] tracking-widest uppercase"
                             variants={{
+                                enter: {
+                                    y: 0,
+                                    opacity: 0
+                                },
                                 hidden: {
                                     y: 0,
                                     opacity: 1,
@@ -185,6 +196,10 @@ export default function Hero() {
                                 <motion.span
                                     className="block"
                                     variants={{
+                                        enter: {
+                                            y: "-100%",
+                                            opacity: 0
+                                        },
                                         hidden: {
                                             y: 0,
                                             opacity: 1,
@@ -207,4 +222,3 @@ export default function Hero() {
         </section>
     );
 }
-
